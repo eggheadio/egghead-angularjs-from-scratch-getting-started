@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="Eggly">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Eggly</title>
+
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="assets/css/eggly.css">
+        <link rel="stylesheet" href="assets/css/animations.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar" ui-view="categories"></div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ui-view="bookmarks"></div>
+            </div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-animate.min.js"></script>
+
+        <script src="vendor/angular-ui-router.min.js"></script>
+        <script src="app/eggly-app.complete.js"></script>
+        <script src="app/categories/categories.js"></script>
+        <script src="app/categories/bookmarks/bookmarks.js"></script>
+        <script src="app/categories/bookmarks/edit/bookmarks-edit.js"></script>
+        <script src="app/categories/bookmarks/create/bookmarks-create.js"></script>
+        <script src="app/common/models/bookmarks-model.js"></script>
+        <script src="app/common/models/categories-model.js"></script>
+
+    </body>
+</html>

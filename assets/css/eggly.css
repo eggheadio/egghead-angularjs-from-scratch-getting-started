@@ -1,0 +1,112 @@
+html,
+body {
+    background-color: #D5DBD8;
+    width: 100%;
+    height: 100%;
+    color: #4F534E;
+}
+
+a {
+    color: #373A36;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5bc0de;
+}
+
+.btn, .btn:focus {
+    outline: none !important;
+}
+
+.btn-link {
+    color: #373A36;
+    font-size: 24px;
+    text-decoration: none !important;
+}
+
+.btn-link:hover {
+    color: #5bc0de;
+}
+
+.sidebar a {
+    color: #5bc0de;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.sub-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEE;
+}
+
+.logo {
+    padding: 20px;
+}
+
+.sidebar {
+    display: none;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.sidebar > ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.sidebar .active {
+    background-color: #D5DBD8;
+}
+
+.sidebar .active > a {
+    text-decoration: none;
+    color: #2B2828;
+}
+
+.main .active span,
+.main .active > a {
+    color: #5bc0de;
+}
+
+.editing > button {
+    color: #5bc0de !important;
+}
+.editing > a {
+    color: #5bc0de !important;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #D5DBD8;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        background-color: #2B2828;
+        border-right: 1px solid #7B807E;
+    }
+}
+
+.main {
+    padding-top: 96px;
+    padding-left: 24px;
+}
+
+.createBookmark {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.create-form, .edit-form {
+    padding: 20px;
+}
