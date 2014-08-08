@@ -20,5 +20,18 @@ angular.module('Eggly', [
             {"id": 7, "title": "Wimp", "url": "http://wimp.com", "category": "Humor" },
             {"id": 8, "title": "Dump", "url": "http://dump.com", "category": "Humor" }
         ];
+
+        $scope.currentCategory = null;
+
+        function isCurrentCategory(category) {
+            return $scope.currentCategory !== null && category.name === $scope.currentCategory.name;
+        }
+
+        function setCurrentCategory(category) {
+            $scope.currentCategory = category;
+        }
+
+        $scope.isCurrentCategory = isCurrentCategory;
+        $scope.setCurrentCategory = setCurrentCategory;
     })
 ;

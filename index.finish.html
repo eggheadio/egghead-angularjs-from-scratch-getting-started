@@ -25,11 +25,28 @@
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <div ng-repeat="bookmark in bookmarks | filter:{category:currentCategory.name}">
+                <div ng-class="{active: isSelectedBookmark(bookmark.id)}" ng-repeat="bookmark in bookmarks | filter:{category:currentCategory.name}">
                     <button type="button" class="close">&times;</button>
-                    <button type="button" class="btn btn-link"><span class="glyphicon glyphicon-pencil"></span>
+                    <button type="button" class="btn btn-link" ng-click="startEditing();" ><span class="glyphicon glyphicon-pencil"></span>
                     </button>
                     <a href="{{bookmark.url}}" target="_blank">{{bookmark.title}}</a>
+                </div>
+                <hr/>
+                <!-- CREATING -->
+                <div ng-if="shouldShowCreating()">
+                    <button type="button" class="btn btn-link" ng-click="startCreating()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Create Bookmark
+                    </button>
+                    <div ng-if="isCreating">
+                        Create a bookmark!
+                        <button type="button" class="btn btn-default btn-lg pull-right" ng-click="cancelCreating()">Cancel</button>
+                    </div>
+                </div>
+                <!-- EDITING -->
+                <div ng-if="shouldShowEditing()">
+                    Editing a bookmark!
+                    <button type="button" class="btn btn-default btn-lg pull-right" ng-click="cancelEditing()">Cancel</button>
                 </div>
             </div>
         </div>

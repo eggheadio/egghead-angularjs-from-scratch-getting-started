@@ -21,6 +21,8 @@ angular.module('Eggly', [
           {"id": 8, "title": "Dump", "url": "http://dump.com", "category": "Humor" }
       ];
 
+      $scope.isCreating = false;
+      $scope.isEditing = false;
       $scope.currentCategory = null;
 
       function isCurrentCategory(category) {
@@ -29,9 +31,50 @@ angular.module('Eggly', [
 
       function setCurrentCategory(category) {
           $scope.currentCategory = category;
+
+          cancelCreating();
+          cancelEditing();
       }
 
       $scope.isCurrentCategory = isCurrentCategory;
       $scope.setCurrentCategory = setCurrentCategory;
+
+      //-------------------------------------------------------------------------------------------------
+      // CREATING AND EDITING STATES
+      //-------------------------------------------------------------------------------------------------
+      function shouldShowCreating() {
+          return $scope.currentCategory && !$scope.isEditing;
+      }
+
+      function startCreating() {
+          $scope.isCreating = true;
+          $scope.isEditing = false;
+      }
+
+      function cancelCreating() {
+          $scope.isCreating = false;
+      }
+
+      $scope.shouldShowCreating = shouldShowCreating;
+      $scope.startCreating = startCreating;
+      $scope.cancelCreating = cancelCreating;
+
+      function shouldShowEditing() {
+          return $scope.isEditing && !$scope.isCreating;
+      }
+
+      function startEditing() {
+          $scope.isCreating = false;
+          $scope.isEditing = true;
+      }
+
+      function cancelEditing() {
+          $scope.isEditing = false;
+          $scope.editedBookmark = null;
+      }
+
+      $scope.startEditing = startEditing;
+      $scope.cancelEditing = cancelEditing;
+      $scope.shouldShowEditing = shouldShowEditing;
   })
 ;
