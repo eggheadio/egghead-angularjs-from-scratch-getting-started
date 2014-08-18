@@ -40,6 +40,17 @@ angular.module('Eggly', [
         $scope.isCurrentCategory = isCurrentCategory;
         $scope.setCurrentCategory = setCurrentCategory;
 
+        function setEditedBookmark(bookmark) {
+            $scope.editedBookmark = angular.copy(bookmark);
+        }
+
+        function isSelectedBookmark(bookmarkId) {
+            return $scope.editedBookmark !== null && $scope.editedBookmark.id === bookmarkId;
+        }
+
+        $scope.setEditedBookmark = setEditedBookmark;
+        $scope.isSelectedBookmark = isSelectedBookmark;
+
         function resetCreateForm() {
             $scope.newBookmark = {
                 title: '',
@@ -58,7 +69,18 @@ angular.module('Eggly', [
             resetCreateForm();
         }
 
+        function updateBookmark(bookmark) {
+            var index = _.findIndex($scope.bookmarks, function (b) {
+                return b.id == bookmark.id
+            });
+            $scope.bookmarks[index] = bookmark;
+
+            $scope.editedBookmark = null;
+            $scope.isEditing = false;
+        }
+
         $scope.createBookmark = createBookmark;
+        $scope.updateBookmark = updateBookmark;
 
         //-------------------------------------------------------------------------------------------------
         // CREATING AND EDITING STATES

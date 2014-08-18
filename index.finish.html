@@ -26,7 +26,7 @@
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <div ng-class="{active: isSelectedBookmark(bookmark.id)}"  ng-repeat="bookmark in bookmarks | filter:{category:currentCategory.name}">
-                    <button type="button" class="close">&times;</button>
+                    <button type="button" class="close" ng-click="deleteBookmark(bookmark)">&times;</button>
                     <button type="button" class="btn btn-link" ng-click="setEditedBookmark(bookmark);startEditing();" ><span class="glyphicon glyphicon-pencil"></span>
                     </button>
                     <a href="{{bookmark.url}}" target="_blank">{{bookmark.title}}</a>
