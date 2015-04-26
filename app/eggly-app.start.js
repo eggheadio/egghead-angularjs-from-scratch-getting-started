@@ -11,7 +11,7 @@ angular.module('Eggly', [
 
         $scope.bookmarks = [
             {"id": 0, "title": "AngularJS", "url": "http://angularjs.org", "category": "Development" },
-            {"id": 1, "title": "Egghead.io", "url": "http://angularjs.org", "category": "Development" },
+            {"id": 1, "title": "Egghead.io", "url": "http://egghead.io", "category": "Development" },
             {"id": 2, "title": "A List Apart", "url": "http://alistapart.com/", "category": "Design" },
             {"id": 3, "title": "One Page Love", "url": "http://onepagelove.com/", "category": "Design" },
             {"id": 4, "title": "MobilityWOD", "url": "http://www.mobilitywod.com/", "category": "Exercise" },
