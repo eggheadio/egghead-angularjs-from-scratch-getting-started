@@ -9,3 +9,5 @@ In this first series, we are going to focus on the absolute essentials for getti
 
 [Build an AngularJS App From Scratch: Getting Started](https://egghead.io/series/angularjs-app-from-scratch-getting-started) on egghead.io
 
+tests
+testItbranch
